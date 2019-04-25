@@ -9,10 +9,10 @@
     </div>
 </template>
 <script>
-import posterEditor from "./compoment/posterEdtor.vue";
-import leftPart from "./compoment/leftPart.vue";
-import rightPart from "./compoment/rightPart.vue";
-import topbar from "./compoment/topbar.vue";
+import posterEditor from "./compoment/posterEdtor";
+import leftPart from "./compoment/leftPart";
+import rightPart from "./compoment/rightPart";
+import topbar from "./compoment/topbar";
 
 export default {
     data() {
@@ -23,6 +23,12 @@ export default {
         leftPart,
         rightPart,
         topbar
+    },
+    created() {
+        document.title = 'DOVE'
+        // window.onbeforeunload = function() {
+        //     return '关闭提示'
+        // }
     }
 };
 </script>

@@ -19,7 +19,7 @@ module.exports = {
             test: /\.vue$/,
             loader: 'vue-loader'
         }, {
-            test: /\.js$/,
+            test: /\.jsx?$/,
             loader: 'babel-loader',
             exclude: /node_modules/,
         }, {
@@ -40,6 +40,13 @@ module.exports = {
         }),
         new VueLoaderPlugin()
     ],
+    resolve: {
+        alias: {
+            vue: 'vue/dist/vue.js'
+        },
+        extensions: ['*', '.js', '.css', '.html', '.vue', '.less']
+    },
     context: __dirname,
+    /* cspell:disable */
     devtool: '#eval-source-map'
 }
