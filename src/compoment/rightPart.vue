@@ -15,7 +15,7 @@
                 </div>
             </div>
         </div>
-        <button class="addImage" @click="addImg">
+        <button right class="addImage" @click="addImg">
             <span>添加图片</span>
             <input
                 type="file"

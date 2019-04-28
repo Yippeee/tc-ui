@@ -6,7 +6,8 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.6);
     color: white;
-    z-index: 999
+    z-index: 999;
+    animation: toast-show .5s;
 }
 
 .toast-content{
@@ -21,4 +22,13 @@
 
 .toast-content[position='left']{
     left: 10%;    
+}
+
+@keyframes toast-show{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
 }
