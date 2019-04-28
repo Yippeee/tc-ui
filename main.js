@@ -17,7 +17,7 @@ import './src/dialog/dialog.less'
 import tcImg from './src/imgComponent/image'
 import './src/imgComponent/index.less'
 
-import VueRouter from 'vue-router'
+import router from './src/router/index'
 
 
 Vue.use(tcDialog)
@@ -25,12 +25,12 @@ Vue.use(tcImg)
 Vue.use(ElementUI)
 Vue.use(toast, { type: 'top' })
 
-Vue.ues(VueRouter)
 
 Vue.config.productionTip = false // 可以关闭开发(development)下的vue的提示信息
 
 new Vue({
     el: '#app',
+    router,
     render: (h) => {
         return h(main)
     },

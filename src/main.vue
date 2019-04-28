@@ -3,16 +3,18 @@
         <topbar></topbar>
         <div class="contentWraper">
             <leftPart></leftPart>
-            <posterEditor></posterEditor>
+            <router-view></router-view>
+            <posterEditor>
+            </posterEditor>
             <rightPart></rightPart>
         </div>
     </div>
 </template>
 <script>
-import posterEditor from "./compoment/posterEdtor";
-import leftPart from "./compoment/leftPart";
-import rightPart from "./compoment/rightPart";
-import topbar from "./compoment/topbar";
+import posterEditor from "./component/posterEditor";
+import leftPart from "./component/leftPart";
+import rightPart from "./component/rightPart";
+import topbar from "./component/topbar";
 
 export default {
     data() {
