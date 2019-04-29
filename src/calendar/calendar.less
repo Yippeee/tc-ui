@@ -1,0 +1,68 @@
+.tc-calendar {
+    background-color: #fff;
+}
+
+.tc-calendar__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 20px;
+    border-bottom: 1px solid grey;
+}
+
+.tc-calendar-table__header {
+    display: flex;
+    justify-content: space-between
+}
+
+.tc-calendar-table__header__cell {
+    box-sizing: border-box;
+    padding: 15px;
+    height: 55px;
+    flex: 1 1 auto;
+    text-align: center
+}
+
+.tc-calendar-table__body {
+    margin: 5px;
+    border: 1px solid grey;
+
+    .tr {
+        display: flex;
+        justify-content: space-between;
+
+        .td {
+            box-sizing: border-box;
+            padding: 15px;
+            height: 85px;
+            flex: 1 1 auto;
+            border-bottom: 1px solid grey;
+            border-right: 1px solid grey;
+            transition: background-color .2s ease;
+            vertical-align: top;
+
+            &.pre,
+            &.next {
+                color: grey;
+                border-bottom: 1px solid #ebeef5;
+                border-right: 1px solid #ebeef5;
+            }
+
+            &:hover,
+            &.selected {
+                background-color: #f2f8fe;
+                color: blue;
+            }
+
+            &.today {
+                color: blue;
+            }
+
+            span {
+                display: inline-block;
+                width: 20px;
+            }
+
+        }
+    }
+
+}

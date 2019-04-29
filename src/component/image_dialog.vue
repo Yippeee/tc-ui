@@ -1,5 +1,5 @@
 <template>
-    <div id="posterEdtor">
+    <div id="img_dig">
         <button @click="toast"></button>
         <button @click="toast2"></button>
         <div v-test>test content</div>
@@ -97,11 +97,6 @@ export default {
 };
 </script>
 <style lang="less" scoped>
-#posterEdtor {
-    height: 100%;
-    flex: 1 1 auto;
-    background-color: #ececec;
-}
 .srcollDiv{
     display: inline-block;
     width: 400px;

@@ -17,9 +17,13 @@ import './src/dialog/dialog.less'
 import tcImg from './src/imgComponent/image'
 import './src/imgComponent/index.less'
 
+// calendar 注入
+import tcCalender from './src/calendar/index'
+import './src/calendar/calendar.less'
+
 import router from './src/router/index'
 
-
+Vue.use(tcCalender)
 Vue.use(tcDialog)
 Vue.use(tcImg)
 Vue.use(ElementUI)

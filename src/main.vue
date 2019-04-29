@@ -3,7 +3,6 @@
         <topbar></topbar>
         <div class="contentWraper">
             <leftPart></leftPart>
-            <router-view></router-view>
             <posterEditor>
             </posterEditor>
             <rightPart></rightPart>
@@ -11,10 +10,10 @@
     </div>
 </template>
 <script>
-import posterEditor from "./component/posterEditor";
-import leftPart from "./component/leftPart";
-import rightPart from "./component/rightPart";
-import topbar from "./component/topbar";
+import posterEditor from "./layout/posterEditor";
+import leftPart from "./layout/leftPart";
+import rightPart from "./layout/rightPart";
+import topbar from "./layout/topbar";
 
 export default {
     data() {

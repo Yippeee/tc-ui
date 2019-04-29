@@ -3,7 +3,6 @@ let tpl = null
 export default {
     install(Vue, option) {
         const { type } = option
-        console.log(type)
         /**
          * @param  {显示文本信息} msg
          */

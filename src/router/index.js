@@ -1,12 +1,20 @@
+import Vue from 'vue'
 import router from 'vue-router'
 
-import posterEditor from "@/component/posterEditor";
+import img_dig from "@/component/image_dialog";
+import calendar from "@/component/calendar";
+
+Vue.use(router)
 
 export default new router({
   routes: [
     {
       path: '/',
-      component: posterEditor
+      component: img_dig
+    },
+    {
+      path: '/a',
+      component: calendar
     }
   ]
 })
