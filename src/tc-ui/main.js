@@ -8,14 +8,15 @@ import tcDialog from './dialog/index'
 
 import tcCalendar from './calendar/calendar'
 import tcSwitch from './switch/switch'
+import tcSteps from './steps/steps'
+import tcStep from './steps/step'
 
-const components = [tcCalendar, tcSwitch]
+const components = [tcCalendar, tcSwitch, tcSteps, tcStep]
 
 
 export default {
     install(Vue, option) {
         components.forEach(com => {
-            console.log('com: ', com);
             Vue.component(com.name, com)
         })
         tcToast.install.call(this, Vue)

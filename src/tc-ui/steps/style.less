@@ -1,0 +1,47 @@
+:root {
+    --text-width: 50px;
+}
+
+.tc-steps {
+    display: flex;
+}
+
+.tc-step {
+    position: relative;
+    overflow: hidden;
+    transition: color .9s;
+}
+
+.tc-step:last-of-type {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: auto !important
+}
+
+.tc-step_text {
+    display: inline-block;
+    z-index: 10;
+    width: var(--text-width);
+}
+
+.tc-step__line {
+    z-index: 1;
+    position: absolute;
+    top: 11px;
+    left: var(--text-width);
+    height: 1px;
+    width: 100%;
+    background-color: black;
+}
+
+.is-wait {
+    color: #c0c4cc;
+}
+
+.is-process {
+    color: #303133;
+}
+
+.is-success {
+    color: #67c23a;
+}
