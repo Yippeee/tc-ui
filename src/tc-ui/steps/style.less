@@ -1,5 +1,6 @@
 :root {
     --text-width: 50px;
+    --text-width-half: 25px;
 }
 
 .tc-steps {
@@ -18,16 +19,30 @@
     flex-basis: auto !important
 }
 
-.tc-step_text {
-    display: inline-block;
+.tc-step__icon {
+    display: inline-flex;
     z-index: 10;
     width: var(--text-width);
+    height: var(--text-width);
+    border-radius: 50%;
+    border: 1px solid;
+    border-color: inherit;
+    justify-content: center;
+    align-items: center;
+}
+
+.tc-step__icon-text{
+    display: inline-block;
+}
+
+.tc-step__main{
+    margin-top: 15px;
 }
 
 .tc-step__line {
     z-index: 1;
     position: absolute;
-    top: 11px;
+    top: var(--text-width-half);
     left: var(--text-width);
     height: 1px;
     width: 100%;

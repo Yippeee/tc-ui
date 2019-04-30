@@ -1,7 +1,11 @@
 <template>
     <div class="tc-step" :style="style" :class=process>
-        <div class="tc-step_text">{{this.title}}</div>
+        <div class="tc-step__icon">
+            <div class="tc-step__icon-text" v-if='index < $parent.active'>✔️</div>
+            <div class="tc-step__icon-text" v-else>{{index}}</div>
+        </div>
         <div class="tc-step__line"></div>
+        <div class="tc-step__main">{{this.title}}</div>
     </div>
 </template>
 <script>
@@ -34,7 +38,7 @@ export default {
             // }
             style.flexBasis = 100 / (this.$parent.steps.length - 1) + "%";
             return style;
-        }
+        },
     },
     methods: {
         updataStatus() {
@@ -54,10 +58,8 @@ export default {
                 // 这里是保证了在父组件已经设置了 step 的index 值
                 console.log(val);
                 this.$watch('$parent.active', () => {
-                    console.log(this.$parent.active)
                     this.updataStatus()
                 }, { immediate: true }) // immediate 的表现有点不解，需要看一下原因
-                unwatch()
             }
         );
     }
