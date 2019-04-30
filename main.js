@@ -21,8 +21,13 @@ import './src/imgComponent/index.less'
 import tcCalender from './src/calendar/index'
 import './src/calendar/calendar.less'
 
+// switch 注入
+import tcSwitch from './src/switch/index'
+import './src/switch/index.less'
+
 import router from './src/router/index'
 
+Vue.use(tcSwitch)
 Vue.use(tcCalender)
 Vue.use(tcDialog)
 Vue.use(tcImg)

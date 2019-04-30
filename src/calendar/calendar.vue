@@ -43,16 +43,18 @@ const weekArr = ["日", "一", "二", "三", "四", "五", "六"];
 
 export default {
     name: "tc-calendar",
+    model: { // 可以自定义v-modal属性
+        prop: "value",
+        event: "change"
+    },
     props: {
-        value: { // 这个value 是特指 v-model 用的
+        value: {
+            // 这个value 是特指 v-model 用的
             type: Date,
             default() {
                 return new Date();
             }
         }
-    },
-    mounted() {
-        console.log(this.value)
     },
     data() {
         return {
@@ -96,8 +98,8 @@ export default {
             this.month = val.getMonth() + 1;
             this.firstWeek = getFirstDayWeek(val);
         },
-        selectDate(val){
-            this.$emit('input', val) // 实现 v-modal 响应式
+        selectDate(val) {
+            this.$emit("change", val); // 实现 v-modal 响应式
         }
     },
     computed: {
@@ -135,13 +137,13 @@ export default {
                         }
                     }
                     tr.push({
-                        text: (text + 1),
+                        text: text + 1,
                         type: type
                     });
                 }
             }
             return days;
-        },
+        }
     }
 };
 </script>
