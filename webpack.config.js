@@ -2,11 +2,14 @@ const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
-module.exports = {
+const isDevelopment = process.env.NODE_ENV === 'development';
+
+const config = {
+    mode: isDevelopment ? 'development' : 'production',
     entry: './main.js',
     output: {
         filename: 'poster.min.js',
-        path: path.resolve(__dirname, './build'),
+        path: path.resolve(__dirname, './dist'),
     },
     module: {
         rules: [{
@@ -48,6 +51,13 @@ module.exports = {
         extensions: ['*', '.js', '.css', '.html', '.vue', '.less']
     },
     context: __dirname,
-    /* cspell:disable */
-    devtool: '#eval-source-map'
+
 }
+// cSpell: ignore devtool
+if (isDevelopment && config.mode === 'development') { // 这个 devtool 体积非常的大啊,在production环境下一定不能打包
+    config.devtool = '#eval-source-map'
+} else {
+    config.devtool = false
+}
+
+module.exports = config
