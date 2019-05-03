@@ -1,7 +1,7 @@
 {
   "presets": [
     [
-      "env",
+      "@babel/preset-env",
       {
         "modules": false,
         "targets": {
@@ -12,8 +12,17 @@
           ]
         }
       }
-    ],
-    "stage-3"
+    ]
   ],
-  "plugins": ["transform-vue-jsx"]
+  "plugins": [
+    "transform-vue-jsx",
+    "@babel/plugin-syntax-dynamic-import",
+    [
+      "component",
+      {
+        "libraryName": "element-ui",
+        "styleLibraryName": "theme-chalk"
+      }
+    ]
+  ]
 }

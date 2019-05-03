@@ -1,6 +1,7 @@
 const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const isDevelopment = process.env.NODE_ENV === 'development';
 
@@ -11,10 +12,32 @@ const config = {
         filename: 'poster.min.js',
         path: path.resolve(__dirname, './dist'),
     },
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                commons: {
+                    chunks: 'initial',
+                    minChunks: 2,
+                    maxInitialRequests: 5,
+                    minSize: 0
+                },
+                vendor: { // 将第三方模块提取出来
+                    test: /node_modules/,
+                    chunks: 'initial',
+                    name: 'vendor',
+                    priority: 10, // 优先
+                    enforce: true
+                }
+            }
+        }
+    },
     module: {
         rules: [{
             test: /\.css$/,
-            use: ['style-loader', 'css-loader']
+            use: ExtractTextPlugin.extract({
+                fallback: "style-loader",
+                use: "css-loader"
+            })
         }, {
             test: /\.html$/,
             loader: 'html-loader'
@@ -41,6 +64,7 @@ const config = {
         new htmlWebpackPlugin({
             template: './index.html',
         }),
+        new ExtractTextPlugin("styles.css"),
         new VueLoaderPlugin()
     ],
     resolve: {
