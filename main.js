@@ -16,6 +16,7 @@ import router from './src/router/index'
 Vue.use(tcUI)
 
 Vue.config.productionTip = false // 可以关闭开发(development)下的vue的提示信息
+Vue.config.devtools = true // 解决使用CDN的vue下devtools不能使用的问题
 
 new Vue({
     el: '#app',

@@ -1,0 +1,71 @@
+:root {
+    --radio-blue: #409eff;
+}
+
+.tc-radio {
+    display: inline;
+    cursor: pointer;
+    position: relative;
+    outline: none; // 去掉 tab index 的默认样式
+
+    &.is-checked {
+        .tc-radio__inner {
+            border: 1px solid var(--radio-blue);
+            background-color: var(--radio-blue);
+
+            &::after {
+                transform: translateX(-50%) translateY(-50%) scale(1);
+            }
+        }
+    }
+}
+
+.tc-radio__input {
+    border: 1px solid transparent;
+    white-space: nowrap;
+    cursor: pointer;
+    outline: none;
+    display: inline-block;
+    line-height: 1;
+    position: relative;
+    vertical-align: middle;
+
+    input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: 0;
+        z-index: -1;
+        opacity: 0;
+    }
+}
+
+.tc-radio__inner {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 15px;
+    height: 15px;
+    border: 1px solid grey;
+    border-radius: 50%;
+    vertical-align: top;
+
+    &:hover {
+        border: 1px solid var(--radio-blue);
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%) scale(0);
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: #ffffff;
+        transition: transform .1s ease-in;
+    }
+}

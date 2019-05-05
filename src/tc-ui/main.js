@@ -6,12 +6,15 @@ import tcToast from './toast/index'
 import tcImg from './imgComponent/image'
 import tcDialog from './dialog/index'
 
+// 组件形式注册
 import tcCalendar from './calendar/calendar'
 import tcSwitch from './switch/switch'
 import tcSteps from './steps/steps'
 import tcStep from './steps/step'
+import tcRadio from './radio/radio'
+import tcRadioGroup from './radio/radioGroup'
 
-const components = [tcCalendar, tcSwitch, tcSteps, tcStep]
+const components = [tcCalendar, tcSwitch, tcSteps, tcStep, tcRadio, tcRadioGroup]
 
 
 export default {

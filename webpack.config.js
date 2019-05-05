@@ -13,7 +13,7 @@ const config = {
     output: {
         filename: 'poster.min.js',
         path: path.resolve(__dirname, './dist'),
-        publicPath: './'
+        publicPath: isDevelopment ? '' : './'
     },
     optimization: {
         splitChunks: {
@@ -69,7 +69,6 @@ const config = {
         }),
         new ExtractTextPlugin("styles.css"),
         new VueLoaderPlugin(),
-        new CleanWebpackPlugin(),
         new WebpackCdnPlugin({
             modules: [
                 {
@@ -107,6 +106,10 @@ if (isDevelopment && config.mode === 'development') { // 这个 devtool 体积�
     config.devtool = '#eval-source-map'
 } else {
     config.devtool = false
+    config.plugins.push(
+        new CleanWebpackPlugin()
+    )
+    console.log('clean completed!')
 }
-
+console.log('mode:', config.mode)
 module.exports = config
