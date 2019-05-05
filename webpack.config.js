@@ -2,6 +2,8 @@ const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const WebpackCdnPlugin = require('webpack-cdn-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const isDevelopment = process.env.NODE_ENV === 'development';
 
@@ -11,6 +13,7 @@ const config = {
     output: {
         filename: 'poster.min.js',
         path: path.resolve(__dirname, './dist'),
+        publicPath: './'
     },
     optimization: {
         splitChunks: {
@@ -65,7 +68,29 @@ const config = {
             template: './index.html',
         }),
         new ExtractTextPlugin("styles.css"),
-        new VueLoaderPlugin()
+        new VueLoaderPlugin(),
+        new CleanWebpackPlugin(),
+        new WebpackCdnPlugin({
+            modules: [
+                {
+                    name: 'vue',
+                    var: 'Vue',
+                    path: 'dist/vue.runtime.min.js'
+                },
+                {
+                    name: 'vue-router',
+                    var: 'VueRouter',
+                    path: 'dist/vue-router.min.js'
+                },
+                {
+                    name: 'element-ui',
+                    var: 'ElementUI',
+                    style: 'lib/theme-chalk/index.css',
+                    path: 'lib/index.js'
+                }
+            ],
+            publicPath: '/node_modules'
+        })
     ],
     resolve: {
         alias: {

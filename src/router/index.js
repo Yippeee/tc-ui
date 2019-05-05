@@ -9,7 +9,8 @@ const img_dig = () => import("@/component/image_dialog")
 const calendar = () => import("@/component/calendar")
 const tcSwitch = () => import("@/component/switch")
 
-Vue.use(router)
+// Vue.use(router)
+if (!window.router) Vue.use(router)
 
 export default new router({
   routes: [
