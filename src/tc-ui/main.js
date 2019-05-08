@@ -13,9 +13,11 @@ import tcSteps from './steps/steps'
 import tcStep from './steps/step'
 import tcRadio from './radio/radio'
 import tcRadioGroup from './radio/radioGroup'
+import tcInput from './input/input'
+import tcSelect from './select/select'
+import tcTooltip from './tooltip/tooltip'
 
-const components = [tcCalendar, tcSwitch, tcSteps, tcStep, tcRadio, tcRadioGroup]
-
+const components = [tcCalendar, tcSwitch, tcSteps, tcStep, tcRadio, tcRadioGroup, tcInput, tcSelect, tcTooltip]
 
 export default {
     install(Vue, option) {
