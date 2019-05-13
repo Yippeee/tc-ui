@@ -61,7 +61,10 @@ const config = {
         }, {
             test: /\.less$/,
             loader: 'style-loader!css-loader!less-loader'
-        }]
+        }, {
+            test: /\.sass$/,
+            loader: 'style-loader!css-loader!sass-loader'
+        },]
     },
     plugins: [
         new htmlWebpackPlugin({
@@ -86,6 +89,11 @@ const config = {
                     var: 'ElementUI',
                     style: 'lib/theme-chalk/index.css',
                     path: 'lib/index.js'
+                },
+                {
+                    name: 'vuex',
+                    var: 'Vuex',
+                    path: 'dist/vuex'
                 }
             ],
             publicPath: '/node_modules'
