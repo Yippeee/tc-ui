@@ -1,42 +1,49 @@
 .tc-tooltip {
-  display: inline;
-  position: absolute;
-  border: 1px solid #303133;
-  padding: 5px;
-  border-radius: 5px;
-  box-sizing: border-box;
+    display: inline;
+    position: absolute;
+    border: 1px solid #303133;
+    padding: 5px;
+    border-radius: 5px;
+    box-sizing: border-box;
 }
 
 .tooltip-arrow {
-  display: inline-block;
-  position: absolute;
-  box-sizing: border-box;
-  width: 0px;
-  height: 0px;
-  border-top: 10px solid #303133;
-  border-right: 10px solid transparent;
-  border-left: 10px solid transparent;
+    display: inline-block;
+    position: absolute;
+    box-sizing: border-box;
+    width: 0px;
+    height: 0px;
+    border-top: 10px solid #303133;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
 }
 
 .tooltip-arrow__left {
-  border-left: 10px solid #303133;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
+    border-left: 10px solid #303133;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
 }
 
 .tooltip-arrow__bottom {
-  border-bottom: 10px solid #303133;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 10px solid transparent;
+    border-bottom: 10px solid #303133;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid transparent;
+}
+
+.tooltip-arrow__right {
+    border-right: 10px solid #303133;
+    border-left: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-top: 10px solid transparent;
 }
 
 .tc-tooltip-fade-enter-active,
 .tc-tooltip-fade-leave-active {
-  transition: all .5s;
+    transition: opacity .5s;
 }
 
 .tc-tooltip-fade-enter,
 .tc-tooltip-fade-leave-to {
-  opacity: 0;
+    opacity: 0;
 }

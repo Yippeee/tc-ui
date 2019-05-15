@@ -8,6 +8,7 @@
             <router-link to="/" tag='li'>image & dialog</router-link>
             <router-link to="/a" tag='li'>calendar</router-link>
             <router-link to="/switch" tag='li'>switch</router-link>
+            <router-link to="/rate" tag='li'>rate</router-link>
         </ul>
     </div>
 </template>

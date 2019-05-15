@@ -61,10 +61,10 @@
     </div>
 </template>
 <script>
-import format from '../util/date.js'
+import format from "../util/date.js";
 export default {
-    created(){
-        console.log('Date.now(): ', Date.now());
+    created() {
+        console.log("Date.now(): ", Date.now());
     },
     data() {
         return {
@@ -78,7 +78,7 @@ export default {
         toast() {
             // this.$loading("this is my msg");
             // this.toastShow = !this.toastShow
-            this.$store.commit('buy', Math.random())
+            this.$store.commit("buy", Math.random());
             this.dialogVisible2 = true;
         },
         toast2() {
@@ -102,7 +102,7 @@ export default {
 };
 </script>
 <style lang="less" scoped>
-.srcollDiv{
+.srcollDiv {
     display: inline-block;
     width: 400px;
     height: 200px;
