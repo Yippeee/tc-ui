@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "target": "ES6",
+        "allowSyntheticDefaultImports": true,
+        "baseUrl": "./",
+        "paths": {
+            "@/*": ["src/*"],
+            "^/*": ["src/tc-ui/*"]
+        },
+        "moduleResolution": "classic"
+    },
+    "exclude": ["node_modules", "dist"],
+    "include": ["./src/**/*.vue", "./src/**/*.js"]
+}

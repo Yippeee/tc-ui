@@ -9,7 +9,7 @@ const isDevelopment = process.env.NODE_ENV === 'development';
 
 const config = {
     mode: isDevelopment ? 'development' : 'production',
-    entry: './main.js',
+    entry: ['babel-polyfill', './main.js'],
     output: {
         filename: 'poster.min.js',
         path: path.resolve(__dirname, './dist'),
@@ -77,7 +77,7 @@ const config = {
                 {
                     name: 'vue',
                     var: 'Vue',
-                    path: 'dist/vue.runtime.min.js'
+                    path: 'dist/vue.js'
                 },
                 {
                     name: 'vue-router',
@@ -93,7 +93,7 @@ const config = {
                 {
                     name: 'vuex',
                     var: 'Vuex',
-                    path: 'dist/vuex'
+                    path: 'dist/vuex.min.js'
                 }
             ],
             publicPath: '/node_modules'
@@ -102,7 +102,8 @@ const config = {
     resolve: {
         alias: {
             vue: 'vue/dist/vue.js',
-            '@': path.resolve(__dirname, './src')
+            '@': path.resolve(__dirname, './src'),
+            '^': path.resolve(__dirname, './src/tc-ui')
         },
         extensions: ['*', '.js', '.css', '.html', '.vue', '.less']
     },

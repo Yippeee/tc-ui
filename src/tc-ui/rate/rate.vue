@@ -23,7 +23,7 @@ export default {
     props: {
         max: {
             type: Number,
-            default: 5
+            default: 10
         },
         activeClass: {
             type: String,
@@ -36,7 +36,7 @@ export default {
     },
     computed: {
         classes() {
-            let result = Array(5);
+            let result = Array(this.max);
             let index = this.hoverIndex || this.clickIndex;
             result.fill(this.activeClass, 0, index);
             result.fill(this.voidClass, index, this.max);
